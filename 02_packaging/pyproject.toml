@@ -1,0 +1,38 @@
+[build-system]
+requires = [
+    "setuptools >= 61",
+    "wheel >= 0.38",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epi_models"
+version = "0.1.0"
+dependencies = [
+    "matplotlib",
+    "pyyaml",
+]
+keywords = [
+    "epimediology",
+    "virology",
+    "SIR",
+    "SEIR",
+    "Compartmental",
+    "Model",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.scripts]
+epi_models = "epi_models.__main__:main"
+epi_models_sir = "epi_models.plotting.plot_SIR:main"
+
+[tool.setuptools.package-data]
+"*" = ["*.json"]
